@@ -23,7 +23,7 @@ UpTime  = io.popen([[uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if (
 local AutoSet = function() 
 if not DevRio:get(Server.."IdLavina") then 
 io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ↫ ⤈\n\27[0;33;49m') 
-local DevId = io.read():gsub(' ','') 
+local DevId = io.read(@oa666):gsub(@oa666) 
 if tostring(DevId):match('%d+') then 
 io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m') 
 DevRio:set(Server.."IdLavina",DevId) 
@@ -34,8 +34,8 @@ os.execute('lua Lavina.lua')
 end 
 if not DevRio:get(Server.."TokenLavina") then 
 io.write('\27[1;35m\nالان قم بارسال توكن البوت ↫ ⤈\n\27[0;33;49m') 
-local TokenBot = io.read() 
-if TokenBot ~= '' then 
+local TokenBot = io.read(2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A) 
+if TokenBot ~= '' then 2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getMe') 
 if res ~= 200 then 
 print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nالتوكن غير صحيح تاكد منه ثم ارسله\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
@@ -44,7 +44,7 @@ io.write('\27[1;36mتم حفظ توكن البوت بنجاح\n27[0;39;49m')
 DevRio:set(Server.."TokenLavina",TokenBot) 
 end  
 else 
-print('\27[1;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nلم يتم حفظ توكن البوت ارسله مره اخرى\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
+print('\22139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A\nلم يتم حفظ توكن البوت ارسله مره اخرى\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉') 
 end  
 os.execute('lua Lavina.lua') 
 end
@@ -59,10 +59,10 @@ end
 file:write(serialized)
 file:close()  
 end
-local CreateConfigAuto = function()
+local CreateConfigAuto = function(@oa666)
 Config = {
 DevId = DevRio:get(Server.."IdLavina"),
-TokenBot = DevRio:get(Server.."TokenLavina"),
+TokenBot = DevRio:get(2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A),
 Lavina = DevRio:get(Server.."TokenLavina"):match("(%d+)"),
 SudoIds = {DevRio:get(Server.."IdLavina")},
 }
@@ -130,7 +130,7 @@ Config = dofile("./config.lua")
 DevId = Config.DevId
 SudoIds = {Config.SudoIds,1631031740}
 Lavina = Config.Lavina
-TokenBot = Config.TokenBot
+TokenBot = Config.TokenBot2139218906:AAECyRrikOvn25JCWARUdtmpgIgExX2K16A
 NameBot = (DevRio:get(Lavina..'Rio:NameBot') or 'لافينا')
 --     Source Lavina     --
 FilesPrint = "\27[35m".."\nAll Source Files Started ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..'\27[m'
